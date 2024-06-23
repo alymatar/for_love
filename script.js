@@ -17,11 +17,27 @@ function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
+function getRandomLanguage() {
+    // Define "I love you" in multiple languages
+    const phrases = [
+        "Te amo",      // Spanish
+        "Je t'aime",   // French
+        "Ich liebe dich", // German
+        "Ti amo",      // Italian
+        "Eu te amo",   // Portuguese
+        "Я тебя люблю", // Russian
+        "我爱你",       // Chinese (Mandarin)
+        "I love you"   // English
+    ];
+    // Return a random phrase from the array
+    return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
 function createWord() {
     const container = document.getElementById('container');
     const word = document.createElement('div');
     word.className = 'word';
-    word.textContent = 'I love you';
+    word.textContent = getRandomLanguage();
 
     // Apply a random color to the word
     word.style.color = getRandomColor();
